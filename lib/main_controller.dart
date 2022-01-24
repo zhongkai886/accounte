@@ -11,6 +11,5 @@ class MainController extends GetxController {
 
   void onItemTapped(int index) {
     selectIndex.value = index;
-    // return selectIndex.value;
   }
 }

@@ -1,15 +1,16 @@
+import 'package:accounte/account/account_controller.dart';
 import 'package:accounte/main_controller.dart';
 import 'package:accounte/main_page.dart';
+import 'package:accounte/setting/setting_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
-  // Get.put(MainController());
-  final MainController controller = Get.put(MainController());
+  Get.put<MainController>(MainController(), permanent: true);
+  Get.put<AccountController>(AccountController(), permanent: true);
+  Get.put<SettingController>(SettingController(), permanent: true);
   runApp(const MyApp());
 }
-
-MainController _mainController = Get.find();
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Accounte',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
